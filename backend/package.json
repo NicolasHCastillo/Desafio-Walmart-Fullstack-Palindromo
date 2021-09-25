@@ -1,0 +1,41 @@
+{
+  "name": "backend_walmart",
+  "version": "1.0.0",
+  "description": "nodejs walmart",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon --legacy-watch src/index.js --exec babel-node",
+    "build": "babel src --out-dir dist",
+    "start": "NODE_ENV=production node dist/index.js",
+    "test": "NODE_ENV=test jest --verbose --silent --detectOpenHandles" ,
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "mongoose": "^5.11.4",
+    "mongoose-paginate-v2": "^1.4.2",
+    "mongoose-unique-validator": "^2.0.3",
+    "morgan": "^1.10.0",
+    "underscore": "^1.12.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.8",
+    "@babel/core": "^7.12.9",
+    "@babel/node": "^7.12.6",
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "jest": "^27.1.0",
+    "nodemon": "^2.0.6",
+    "supertest": "^6.1.6"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
