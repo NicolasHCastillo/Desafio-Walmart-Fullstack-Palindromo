@@ -1,0 +1,26 @@
+.title-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+h1{
+    line-height: 1.1;
+    color: inherit;
+}
+
+.title-content h1{
+    align-self: flex-start;
+    margin: auto 0;
+}
+
+.title-content .btn-group{
+    margin-left: auto;
+}
+
+.reset{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,36 @@
+<div class="item-cont">
+    <div [id]="item.id" class="item-post">
+        <div class="cover">
+            <app-ribbon-corner *ngIf="showDiscount" [title]="'50%'"></app-ribbon-corner>
+            <div class="overlay overlay-blur">
+                <span>
+                    {{ item.brand }}
+                </span>
+                <span>
+                    {{ item.price | currency }}
+                </span>
+            </div>
+            <img class="img-border" [src]="item.image | externalHref | safe" [alt]="item.description" width="100" height="100">
+        </div>
+        <div class="info mx-3">
+            <div class="principal">
+                <div class="text-post">
+                    {{item.brand}}
+                </div>
+                <div class="info-post">
+                    <div class="text-muted text-xs text-post">
+                        {{item.description}}
+                    </div>
+                </div>
+            </div>
+            <div class="price">
+                <span>
+                    <b>{{ item.price | currency }}</b>
+                </span>
+                <span *ngIf="showDiscount" class="no-discount">
+                    {{ priceWithOutDiscount | currency }}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

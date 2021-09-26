@@ -11,7 +11,7 @@ export const searchValidationRules = () => {
   return [
     query('search')
         .isString()
-        .isLength({min: 3})
+        .isLength({min: 4})
         .optional()
     ,
     query('limit')

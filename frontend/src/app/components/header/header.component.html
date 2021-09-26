@@ -1,0 +1,25 @@
+<nav class="navbar navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand">
+          {{ appName }}
+      </a>
+      <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)" class="d-flex">
+        <input
+            #search="ngModel"
+            name="search"
+            ngModel
+            class="form-control me-2"
+            type="text"
+            placeholder="Buscar..."
+            aria-label="Search"
+        >
+        <button
+            class="btn btn-outline-light"
+            type="submit"
+            [disabled]="!enabledSearch(searchForm)"
+        >
+            Buscar
+        </button>
+      </form>
+    </div>
+</nav>

@@ -1,0 +1,19 @@
+<div class="pagination">
+    <ul>
+      <a *ngIf="!isFirst" (click)="changePage( 1 )">
+          <li><</li>
+      </a>
+      <a *ngIf="paginator.hasPrevPage" class="not-active" (click)="changePage( paginator.prevPage )">
+        <li>{{ paginator.prevPage }}</li>
+      </a>
+      <a class="is-active">
+          <li>{{ paginator.currentPage }}</li>
+      </a>
+      <a *ngIf="paginator.hasNextPage" class="not-active" (click)="changePage( paginator.nextPage )">
+        <li>{{ paginator.nextPage }}</li>
+      </a>
+      <a *ngIf="!isLast" (click)="changePage( paginator.totalPages )">
+          <li>></li>
+      </a>
+    </ul>
+</div>

@@ -11,7 +11,7 @@ const customPaginateLabels = {
 };
 
 export const checkPalindrome = (value) => {
-    return value == value.split('').reverse().join('');
+    return value && value == value.split('').reverse().join('');
 }
 
 export const generateQueryProductPagination = (search) => {

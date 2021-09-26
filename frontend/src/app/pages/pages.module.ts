@@ -4,8 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { PagesComponent } from './pages.component';
 import { RouterModule } from '@angular/router';
 import { ComponentsModule } from '../components/components.module';
-
-
+import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [HomeComponent, PagesComponent],
@@ -15,7 +14,8 @@ import { ComponentsModule } from '../components/components.module';
   imports: [
     CommonModule,
     RouterModule,
-    ComponentsModule
+    ComponentsModule,
+    PipesModule
   ]
 })
 export class PagesModule { }

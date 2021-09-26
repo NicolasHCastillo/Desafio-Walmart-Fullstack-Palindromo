@@ -39,6 +39,12 @@ export const findById = async(req, res) => {
 
         let product = await Product.findOne({ id });
 
+        if(!product){
+            return res.status(404).json({
+                msg: "Producto no existe",
+            });
+        }
+
         // VERIFY PALINDROME
         if(checkPalindrome(id)){
             product = applyDiscountProduct(product);

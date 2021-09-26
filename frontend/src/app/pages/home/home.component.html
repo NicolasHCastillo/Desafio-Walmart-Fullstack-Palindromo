@@ -1,3 +1,25 @@
-<div class="container">
-    <app-test-comp></app-test-comp>
-</div>
+<app-header
+  (searchEvent)="getSearch($event)"
+>
+</app-header>
+
+<app-title
+  *ngIf="searchValue.length"
+  [title]='searchValue'
+  [total]="total"
+  (handleReset)="resetSearch()"
+>  
+</app-title>
+
+<app-product-list
+  [data]="data"
+  [searchIsPalindrome]="searchIsPalindrome"
+>
+</app-product-list>
+
+<app-paginator
+  *ngIf="paginate && !oneProduct"
+  [paginator]="paginate"
+  (handlePage)="goPage($event)"
+>
+</app-paginator>
