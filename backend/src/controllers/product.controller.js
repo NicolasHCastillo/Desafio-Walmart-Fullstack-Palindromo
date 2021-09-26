@@ -17,7 +17,7 @@ export const findAll = async (req, res) => {
 
         let products = await Product.paginate(query, options);
 
-        // VERIFY PALINDROME
+        // VERIFY PALINDROME TO APPLY DISCOUNT 50%
         if(checkPalindrome(search)){
             products.data = products.data.map((product) => applyDiscountProduct(product));
         }
@@ -44,8 +44,8 @@ export const findById = async(req, res) => {
                 msg: "Producto no existe",
             });
         }
-
-        // VERIFY PALINDROME
+        
+        // VERIFY PALINDROME TO APPLY DISCOUNT 50%
         if(checkPalindrome(id)){
             product = applyDiscountProduct(product);
         }
