@@ -9,6 +9,7 @@ import {
     closeOpenHandles,
     REGEX_APPLICATION_JSON
 } from '../helpers/general.helper';
+
 import { applyDiscountPrice } from '../../utils/helpers';
 
 describe('Product API', () => {
@@ -82,6 +83,16 @@ describe('Product API', () => {
 
             expect(paginator).toHaveProperty('limit', limit);
             expect(paginator).toHaveProperty('currentPage', curPage);
+        });
+
+        test('Should verify mock data with a palindrome search query, and validate the discount was apply', async () => {
+            const curPage = 1;
+            const limit = 5;
+            // palindrome search
+            const search = 'sadas';
+            const { data } = await getProducts(curPage, limit, search);
+            // sequential
+            expect( data[0].price ).toEqual(applyDiscountPrice(initialProducts[5].price));
         });
 
         test('Should return error when search query is less than or equal to 3 chars', async () => {

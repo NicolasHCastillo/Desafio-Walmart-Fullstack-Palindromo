@@ -16,7 +16,7 @@ describe('Index API', () => {
         expect( products ).toEqual('api/product');
     });
     
-    test('Endpoint doest defined - Should be a json response content type with 404 status', async () => {
+    test('Endpoint does not defined - Should be a json response content type with 404 status', async () => {
         const response = await api
                             .get('/sdasjhdkasd')
                             .expect(404)

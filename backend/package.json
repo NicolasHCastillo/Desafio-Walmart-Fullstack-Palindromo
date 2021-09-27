@@ -8,7 +8,8 @@
     "build": "babel src --out-dir dist",
     "start": "NODE_ENV=production node dist/index.js",
     "test": "NODE_ENV=test jest --verbose --silent --detectOpenHandles" ,
-    "test:watch": "npm run test -- --watchAll"
+    "test:watch": "npm run test -- --watchAll",
+    "test:coverage": "npm run test -- --coverage"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +37,8 @@
     "supertest": "^6.1.6"
   },
   "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["json", "html"],
     "testEnvironment": "node"
   }
 }

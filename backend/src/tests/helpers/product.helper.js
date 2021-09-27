@@ -36,6 +36,13 @@ export const initialProducts = [
         description: "trcwl iagxxh",
         image: "www.lider.cl/catalogo/images/whiteLineIcon.svg",
         price: 814893
+    },
+    {
+        id: 5,
+        brand: "sadas",
+        description: "trcwl iagxxh",
+        image: "www.lider.cl/catalogo/images/whiteLineIcon.svg",
+        price: 814893
     }
 ];
 
