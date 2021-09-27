@@ -9,17 +9,17 @@ import {
 export const findAll = async (req, res) => {
     try {
 
-        const {limit, page, search} = req.query;
+        const { limit , page , search } = req.query;
 
-        const options = generateOptionsProductPagination(limit, page);
+        const options = generateOptionsProductPagination( limit , page );
 
-        const query = generateQueryProductPagination(search);
+        const query = generateQueryProductPagination( search );
 
-        let products = await Product.paginate(query, options);
+        let products = await Product.paginate( query, options );
 
         // VERIFY PALINDROME TO APPLY DISCOUNT 50%
-        if(checkPalindrome(search)){
-            products.data = products.data.map((product) => applyDiscountProduct(product));
+        if( checkPalindrome( search ) ){
+            products.data = products.data.map(( product ) => applyDiscountProduct( product ));
         }
 
         return res.status(200).json(products);
@@ -46,8 +46,8 @@ export const findById = async(req, res) => {
         }
         
         // VERIFY PALINDROME TO APPLY DISCOUNT 50%
-        if(checkPalindrome(id)){
-            product = applyDiscountProduct(product);
+        if( checkPalindrome( id ) ){
+            product = applyDiscountProduct( product );
         }
 
         return res.status(200).json(product);

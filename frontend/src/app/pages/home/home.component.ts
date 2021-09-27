@@ -78,6 +78,9 @@ export class HomeComponent implements OnInit {
     if(checkIsNumber(event)){
       this.getProduct(Number(event));
     }else{
+      if(!event.length){
+        this.resetSearch(false);
+      }
       this.getProducts(event);
     }
   }
@@ -87,9 +90,11 @@ export class HomeComponent implements OnInit {
     this.getProducts(this.searchValue);
   }
 
-  resetSearch(){
-    this.getProducts();
+  resetSearch(getProducts: boolean = true){
     this.searchValue = '';
     this.searchIsPalindrome = false;
+    if(getProducts){
+      this.getProducts();
+    } 
   }
 }

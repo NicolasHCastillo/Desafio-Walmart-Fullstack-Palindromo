@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 config();
 
-const { MONGODB_URI, DB_NAME, DB_NAME_TEST, PORT, NODE_ENV} = process.env;
+const { MONGODB_URI , DB_NAME , DB_NAME_TEST , PORT , NODE_ENV } = process.env;
 
 const DB_ENV = {
     test: DB_NAME_TEST,
