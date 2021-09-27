@@ -47,7 +47,8 @@ services:
     ports:
       - "${NODE_PORT_TEST}:3001"
     volumes:
-      - ./backend:/usr/src/app
+      - ./backend:/app
+      - /app/node_modules
     links:
       - database
     depends_on:
@@ -64,6 +65,7 @@ services:
       - "${ANGULAR_PORT}:4200"
     volumes:
       - ./frontend:/app
+      - /app/node_modules
     depends_on:
       - backend
   
