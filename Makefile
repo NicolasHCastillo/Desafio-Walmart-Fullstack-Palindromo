@@ -8,11 +8,9 @@ project-up-background:
 	docker-compose up -d
 
 project-execute-background:
-	make project-build
 	make project-up-background
 
 project-execute:
-	make project-build
 	make project-up
 
 project-down:
